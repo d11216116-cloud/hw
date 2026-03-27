@@ -1,0 +1,18 @@
+# test_safe_division.py
+import pytest
+from safe_division import safe_division
+
+def test_normal_division():
+    assert safe_division(10, 2) == 5
+
+def test_division_by_zero():
+    assert safe_division(10, 0) is None
+
+def test_negative_division():
+    assert safe_division(-10, 2) == -5
+
+def test_float_division():
+    assert pytest.approx(safe_division(7.5, 2.5)) == 3.0
+
+def test_zero_divided_by_number():
+    assert safe_division(0, 5) == 0
