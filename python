@@ -1,8 +1,5 @@
-# safe_division.py
-def safe_division(a: float, b: float) -> float:
-    """
-    安全除法：若 b 為零，回傳 None；否則回傳 a / b
-    """
-    if b == 0:
-        return None
-    return a / b
+def safe_division(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "錯誤：除數不能為零！"
